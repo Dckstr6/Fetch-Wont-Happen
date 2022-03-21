@@ -1,6 +1,8 @@
 import numpy as np
 import pandas as pd
 import nltk
+from prettyprinter import pprint
+
 nltk.download('stopwords')
 nltk.download('wordnet')
 nltk.download('omw-1.4')
@@ -28,15 +30,15 @@ class IR_system():
         self.inverted_index = dict()
         self.permuterm_index = None
 
-        print("Preprocessing Text Files")
+        pprint("Preprocessing Text Files")
         self.preprocess_text_files()
         self.total_tokens = list(np.unique(np.array(self.total_tokens)))
-        print(f"Total number of tokens in vocab is {len(self.total_tokens)}")
+        pprint(f"Total number of tokens in vocab is {len(self.total_tokens)}")
 
-        print(f"Constructing inverted index")
+        pprint(f"Constructing inverted index")
         self.construct_inverted_index()
 
-        print(f"Constructing Permuterm Index")
+        pprint(f"Constructing Permuterm Index")
         self.build_permuterm_index()
 
 
@@ -52,27 +54,27 @@ class IR_system():
         for ch in text:
             if(ch in alphabet_list or ch in whitespace_list):
                 edit_text += ch
-        #print(edit_text)
+        #pprint(edit_text)
         word_list = nltk.word_tokenize(edit_text)
         output = [w for w in word_list if not w in self.stop_words]
-        #print(output)
+        #pprint(output)
         lemmatized = []
         for word in output:
             lemmatized.append(self.lemmatizer.lemmatize(word))
-        #print(lemmatized)
+        #pprint(lemmatized)
         final_string = ""
         self.total_tokens.extend(lemmatized)
         for word in lemmatized:
             final_string += str(word)
             final_string += " "
         final_string = final_string[:-1]
-        #print(final_string)
+        #pprint(final_string)
         return final_string
     
     def preprocess_text_files(self):
         for file in self.data_file_list:
             file1 = self.data_path + file
-            print(f"Processing {file}")
+            pprint(f"Processing {file}")
             with open(file1,'r') as file_ptr:
                 text = file_ptr.read()
             preprocessed_text = self.preprocess(text)
@@ -175,11 +177,12 @@ class IR_system():
     
     def process_user_query(self,user_input):
         postfix = self.infix_to_postfix(user_input)
+        pprint(postfix)
         stack = []
         for index, element in enumerate(postfix):
             if element == "NOT":
                 temp = stack.pop()
-                documents = list(set(self.total_tokens).difference(set(temp)))
+                documents = list(set(self.preprocessed_file_list).difference(set(temp)))
                 stack.append(documents)
             elif element == "AND":
                 right = stack.pop()
@@ -202,11 +205,11 @@ class IR_system():
                     documents = self.inverted_index[element]
                     stack.append(documents)
                 elif '*' in element:
-                    print(f"Checking wildcard {element}")
+                    pprint(f"Checking wildcard {element}")
                     elements = list()
                     elements.clear()
                     elements = self.permuterm_index.getWordsFromWildCard(element)
-                    print(f'found wildcard {elements} for {element}')
+                    pprint(f'found wildcard {elements} for {element}')
                     union_list = list()
                     for word in elements:
                         union_list.extend(self.inverted_index[word])
@@ -215,9 +218,9 @@ class IR_system():
                     union_list.clear()
                 else:
                     elements = list()
-                    print(f"Spelling mistake found in {element}")
+                    pprint(f"Spelling mistake found in {element}")
                     elements = self.process_spelling_mistake(element)
-                    print(f"Using union of results for {elements} instead as substitutes")
+                    pprint(f"Using union of results for {elements} instead as substitutes")
                     union_list = list()
                     for word in elements:
                         union_list.extend(self.inverted_index[word])
@@ -236,11 +239,11 @@ class TrieNode:
 class Trie:
     def __init__(self):
         self.root = TrieNode()
-        print("Created Trie")
+        pprint("Created Trie")
         
     
     def insert(self, wordToInsert):
-#         print(f"Inserting {wordToInsert}")
+#         pprint(f"Inserting {wordToInsert}")
         wordRotations = [wordToInsert[x:] + '{' + wordToInsert for x in range(len(wordToInsert))]
         wordRotations.append('{' + wordToInsert)
 
@@ -258,7 +261,7 @@ class Trie:
 
         for depth, letter in enumerate(wordToSearch):
             if currentNode.nextLetter[ord(letter) - ord('a')] == None:
-#                 print(letter)
+#                 pprint(letter)
                 return False
 
             currentNode = currentNode.nextLetter[ord(letter) - ord('a')]
@@ -281,7 +284,7 @@ class Trie:
     def getWordsUnderNode(self, prefix, node, finalWords = []):
         if node.isEndOfWord == True:
             temp_word = prefix[prefix.find('{')+1:]
-            # print(temp_word)
+            # pprint(temp_word)
             finalWords.append(temp_word)
 
         for i in range(27):
@@ -314,6 +317,6 @@ if __name__ == "__main__":
         else:
             results = fetch.process_user_query(user_input)
             print()
-            print(f"Results for {user_input} are: ")
-            print(results)
+            pprint(f"Results for {user_input} are: ")
+            pprint(results)
             print()
