@@ -15,6 +15,7 @@ from nltk.stem import WordNetLemmatizer
 from tqdm import tqdm
 
 class IR_system():
+    """A Boolean Information Retrieval system."""
     #constructor
     def __init__(self):
         self.data_file_list = os.listdir('./Data/')
@@ -45,6 +46,11 @@ class IR_system():
 
     
     def preprocess(self,text):
+        """ This function goes through the text of a document and tokenizes it, removes stopwords, lemmatizes it and returns a string that is 
+        free of stopwords and the rest of the tokens lemmatized.
+
+        :param text: the text in the document passed as string
+        """
         text = text.lower()
 #     symbol_list = [ '!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`', '{', '|', '}', '~', "'"]
 #     number_list = ['0','1','2','3','4','5','6','7','8','9']
@@ -72,6 +78,9 @@ class IR_system():
         return final_string
     
     def preprocess_text_files(self):
+        """This function reads all the data files and send the text in it to the preprocess() function for 
+        further processing.
+        """
         for file in self.data_file_list:
             file1 = self.data_path + file
             pprint(f"Processing {file}")
@@ -84,6 +93,9 @@ class IR_system():
     
 
     def construct_inverted_index(self):
+        """ Reads a preprocessed file, reads every tokens, adds the document name to the list corresponding to that token. If token is not a keyword of the dictionary it 
+        adds a new entry and creates a posting list for it
+        """
         for index,file in tqdm(enumerate(os.listdir(self.preprocessed_file_path))):
             with open('./preprocessed_data/' + file) as file_ptr:
                 text = file_ptr.read()
@@ -99,6 +111,10 @@ class IR_system():
                             self.inverted_index[token].append(file)
 
     def infix_to_postfix(self,text):
+        """ the user query is tokenized, converted to postfix form to evaluate the boolean expression(query)
+        
+        :param text: the user query after being processed
+        """
         text = text.split(" ")
         stack = []
         precedence = {"NOT": 3, "AND": 2, "OR": 1}
@@ -128,6 +144,11 @@ class IR_system():
         return postfix_expression
     
     def levenshteinDistanceDP(self,string1, string2):
+        """ This well known algorithm finds the number of delete,replace,insert operations required to convert one string into another
+        
+        :param string1: string to edit
+        :param string2: string to which another string has to be edited to 
+        """
         strlen1 =  len(string1)
         strlen2 =  len(string2)
         editDistances = np.zeros((strlen1 + 1, strlen2 + 1))
@@ -149,15 +170,21 @@ class IR_system():
                     b = editDistances[i - 1][j]
                     c = editDistances[i - 1][j - 1]
                     
-                    if (a <= b and a <= c):
+                    if (a == min(a, b, c)):
                         editDistances[i][j] = a + 1
-                    elif (b <= a and b <= c):
+                    elif (b == min(a, b, c)):
                         editDistances[i][j] = b + 1
                     else:
                         editDistances[i][j] = c + 1
         return editDistances[strlen1][strlen2]
     
     def process_spelling_mistake(self,word):
+        """ This function when given a word that is considered to have wrong spelling
+        uses the levenshteinDistanceDP() function to find the edit distances from all the recognised words
+        in the vocabulary and returns the best suited word (least edit distance).
+
+        :param word: The misspelled word for which a word must be found in the vocabulary that is close to the original spelling
+        """
         min_dist = 1000
         min_index_lst = list()
         for i in range(len(self.total_tokens)):
@@ -171,11 +198,17 @@ class IR_system():
         return [self.total_tokens[i] for i in min_index_lst]
     
     def build_permuterm_index(self):
+        """ Creates a trie object and uses its functions to inserts all tokens to create our Permuterm index """
         self.permuterm_index = Trie()
         for word in tqdm(self.total_tokens):
             self.permuterm_index.insert(str(word))
     
     def process_user_query(self,user_input):
+        """ This function is used to process the query given by the user. It is first sent to infix_to_postfix() to get back the postfix stack
+        after which a for loop evaluates the postfix boolean expression to get the resultant documents.
+
+        :param user_input: the query that the user gives.
+        """
         postfix = self.infix_to_postfix(user_input)
         pprint(postfix)
         stack = []
@@ -231,18 +264,24 @@ class IR_system():
 
 
 class TrieNode:
+    """this class creates a node object that is used by the Trie class to create a Trie"""
     def __init__(self):
         self.nextLetter = [None]*27
         self.isEndOfWord = False
 
 
 class Trie:
+    """This class creates a Trie , the datastructure chosen for this boolean information retrieval system to store the permuterm index"""
     def __init__(self):
         self.root = TrieNode()
         pprint("Created Trie")
         
     
     def insert(self, wordToInsert):
+        """ This function finds all rotation of a word and inserts into the Trie
+
+        :param wordToInsert: THe word for which it and its rotations are to be inserted into the trie(permuterm index)
+        """
 #         pprint(f"Inserting {wordToInsert}")
         wordRotations = [wordToInsert[x:] + '{' + wordToInsert for x in range(len(wordToInsert))]
         wordRotations.append('{' + wordToInsert)
@@ -257,6 +296,10 @@ class Trie:
             currentNode.isEndOfWord = True
 
     def search(self, wordToSearch):
+        """ Used to check whether a word is present in the Trie or not
+
+        :param wordToSearch: The word whose presence you want to check
+        """
         currentNode = self.root
 
         for depth, letter in enumerate(wordToSearch):
@@ -269,6 +312,11 @@ class Trie:
         return currentNode.isEndOfWord
 
     def getWordsWithPrefix(self, prefixToSearch):
+        """The function finds and returns words that match with the given prefix. It travels and returns all the words at the leaf level
+        from the node that is reached on traversing trie as per the prefix
+
+        :param prefixToSearch: the prefix of the words you want to find
+        """
         currentNode = self.root
 
         for depth, letter in enumerate(prefixToSearch):
@@ -282,6 +330,10 @@ class Trie:
         return final_words
 
     def getWordsUnderNode(self, prefix, node, finalWords = []):
+        """This returns all the words found by traversing the trie to the leaves from the given node
+
+        :param prefix: the prefix to travel to the node from which all the words under it are required
+        """
         if node.isEndOfWord == True:
             temp_word = prefix[prefix.find('{')+1:]
             # pprint(temp_word)
@@ -294,6 +346,11 @@ class Trie:
         return finalWords
 
     def getWordsFromWildCard(self, wildCard):
+        """ When a wildcard word is passed, it rotates the word untill the * is the last character and finds 
+        all words under the node reach on travelling the prefix of * in the rotated word
+
+        :param wildCard: the wildcard for which you want the words in the documents matching with it 
+        """
         starIndex = wildCard.find('*')
 
         if starIndex == -1:

@@ -1,142 +1,42 @@
-
 <!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
-    <title>IR_system module &#8212; Boolean Information Retrieval System 1.0.0 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IR_system module &mdash; Boolean Information Retrieval System 1.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Fetch-Wont-Happen" href="modules.html" />
-   
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+    <link rel="prev" title="Fetch-Wont-Happen" href="modules.html" /> 
+</head>
 
-  </head><body>
-  
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          
-
-          <div class="body" role="main">
-            
-  <section id="module-IR_system">
-<span id="ir-system-module"></span><h1>IR_system module<a class="headerlink" href="#module-IR_system" title="Permalink to this headline">¶</a></h1>
-<dl class="py class">
-<dt class="sig sig-object py" id="IR_system.IR_system">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">IR_system.</span></span><span class="sig-name descname"><span class="pre">IR_system</span></span><a class="headerlink" href="#IR_system.IR_system" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="IR_system.IR_system.build_permuterm_index">
-<span class="sig-name descname"><span class="pre">build_permuterm_index</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#IR_system.IR_system.build_permuterm_index" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="IR_system.IR_system.construct_inverted_index">
-<span class="sig-name descname"><span class="pre">construct_inverted_index</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#IR_system.IR_system.construct_inverted_index" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="IR_system.IR_system.infix_to_postfix">
-<span class="sig-name descname"><span class="pre">infix_to_postfix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#IR_system.IR_system.infix_to_postfix" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="IR_system.IR_system.levenshteinDistanceDP">
-<span class="sig-name descname"><span class="pre">levenshteinDistanceDP</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">string2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#IR_system.IR_system.levenshteinDistanceDP" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="IR_system.IR_system.preprocess">
-<span class="sig-name descname"><span class="pre">preprocess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#IR_system.IR_system.preprocess" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="IR_system.IR_system.preprocess_text_files">
-<span class="sig-name descname"><span class="pre">preprocess_text_files</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#IR_system.IR_system.preprocess_text_files" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="IR_system.IR_system.process_spelling_mistake">
-<span class="sig-name descname"><span class="pre">process_spelling_mistake</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">word</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#IR_system.IR_system.process_spelling_mistake" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="IR_system.IR_system.process_user_query">
-<span class="sig-name descname"><span class="pre">process_user_query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_input</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#IR_system.IR_system.process_user_query" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="IR_system.Trie">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">IR_system.</span></span><span class="sig-name descname"><span class="pre">Trie</span></span><a class="headerlink" href="#IR_system.Trie" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="IR_system.Trie.getWordsFromWildCard">
-<span class="sig-name descname"><span class="pre">getWordsFromWildCard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wildCard</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#IR_system.Trie.getWordsFromWildCard" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="IR_system.Trie.getWordsUnderNode">
-<span class="sig-name descname"><span class="pre">getWordsUnderNode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prefix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">finalWords</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#IR_system.Trie.getWordsUnderNode" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="IR_system.Trie.getWordsWithPrefix">
-<span class="sig-name descname"><span class="pre">getWordsWithPrefix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prefixToSearch</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#IR_system.Trie.getWordsWithPrefix" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="IR_system.Trie.insert">
-<span class="sig-name descname"><span class="pre">insert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wordToInsert</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#IR_system.Trie.insert" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="IR_system.Trie.search">
-<span class="sig-name descname"><span class="pre">search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wordToSearch</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#IR_system.Trie.search" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="IR_system.TrieNode">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">IR_system.</span></span><span class="sig-name descname"><span class="pre">TrieNode</span></span><a class="headerlink" href="#IR_system.TrieNode" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-</dd></dl>
-
-</section>
-
-
-          </div>
-          
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">Boolean Information Retrieval System</a></h1>
-
-
-
-
-
-
-
-
-<h3>Navigation</h3>
-<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Boolean Information Retrieval System
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Fetch-Wont-Happen</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">IR_system module</a></li>
@@ -144,52 +44,223 @@
 </li>
 </ul>
 
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-  <li><a href="modules.html">Fetch-Wont-Happen</a><ul>
-      <li>Previous: <a href="modules.html" title="previous chapter">Fetch-Wont-Happen</a></li>
-  </ul></li>
-  </ul></li>
-</ul>
-</div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</div>
-<script>$('#searchbox').show(0);</script>
-
-
-
-
-
-
-
-
         </div>
       </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &copy;2022, Pranay Adithya Rishi.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
-      
-      |
-      <a href="_sources/IR_system.rst.txt"
-          rel="nofollow">Page source</a>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Boolean Information Retrieval System</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="modules.html">Fetch-Wont-Happen</a> &raquo;</li>
+      <li>IR_system module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/IR_system.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-IR_system">
+<span id="ir-system-module"></span><h1>IR_system module<a class="headerlink" href="#module-IR_system" title="Permalink to this headline"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="IR_system.IR_system">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">IR_system.</span></span><span class="sig-name descname"><span class="pre">IR_system</span></span><a class="headerlink" href="#IR_system.IR_system" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A Boolean Information Retrieval system.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="IR_system.IR_system.build_permuterm_index">
+<span class="sig-name descname"><span class="pre">build_permuterm_index</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#IR_system.IR_system.build_permuterm_index" title="Permalink to this definition"></a></dt>
+<dd><p>Creates a trie object and uses its functions to inserts all tokens to create our Permuterm index</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="IR_system.IR_system.construct_inverted_index">
+<span class="sig-name descname"><span class="pre">construct_inverted_index</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#IR_system.IR_system.construct_inverted_index" title="Permalink to this definition"></a></dt>
+<dd><p>Reads a preprocessed file, reads every tokens, adds the document name to the list corresponding to that token. If token is not a keyword of the dictionary it 
+adds a new entry and creates a posting list for it</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="IR_system.IR_system.infix_to_postfix">
+<span class="sig-name descname"><span class="pre">infix_to_postfix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#IR_system.IR_system.infix_to_postfix" title="Permalink to this definition"></a></dt>
+<dd><p>the user query is tokenized, converted to postfix form to evaluate the boolean expression(query)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>text</strong> – the user query after being processed</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="IR_system.IR_system.levenshteinDistanceDP">
+<span class="sig-name descname"><span class="pre">levenshteinDistanceDP</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">string2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#IR_system.IR_system.levenshteinDistanceDP" title="Permalink to this definition"></a></dt>
+<dd><p>This well known algorithm finds the number of delete,replace,insert operations required to convert one string into another</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>string1</strong> – string to edit</p></li>
+<li><p><strong>string2</strong> – string to which another string has to be edited to</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="IR_system.IR_system.preprocess">
+<span class="sig-name descname"><span class="pre">preprocess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#IR_system.IR_system.preprocess" title="Permalink to this definition"></a></dt>
+<dd><p>This function goes through the text of a document and tokenizes it, removes stopwords, lemmatizes it and returns a string that is 
+free of stopwords and the rest of the tokens lemmatized.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>text</strong> – the text in the document passed as string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="IR_system.IR_system.preprocess_text_files">
+<span class="sig-name descname"><span class="pre">preprocess_text_files</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#IR_system.IR_system.preprocess_text_files" title="Permalink to this definition"></a></dt>
+<dd><p>This function reads all the data files and send the text in it to the preprocess() function for 
+further processing.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="IR_system.IR_system.process_spelling_mistake">
+<span class="sig-name descname"><span class="pre">process_spelling_mistake</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">word</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#IR_system.IR_system.process_spelling_mistake" title="Permalink to this definition"></a></dt>
+<dd><p>This function when given a word that is considered to have wrong spelling
+uses the levenshteinDistanceDP() function to find the edit distances from all the recognised words
+in the vocabulary and returns the best suited word (least edit distance).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>word</strong> – The misspelled word for which a word must be found in the vocabulary that is close to the original spelling</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="IR_system.IR_system.process_user_query">
+<span class="sig-name descname"><span class="pre">process_user_query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_input</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#IR_system.IR_system.process_user_query" title="Permalink to this definition"></a></dt>
+<dd><p>This function is used to process the query given by the user. It is first sent to infix_to_postfix() to get back the postfix stack
+after which a for loop evaluates the postfix boolean expression to get the resultant documents.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>user_input</strong> – the query that the user gives.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="IR_system.Trie">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">IR_system.</span></span><span class="sig-name descname"><span class="pre">Trie</span></span><a class="headerlink" href="#IR_system.Trie" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This class creates a Trie , the datastructure chosen for this boolean information retrieval system to store the permuterm index</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="IR_system.Trie.getWordsFromWildCard">
+<span class="sig-name descname"><span class="pre">getWordsFromWildCard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wildCard</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#IR_system.Trie.getWordsFromWildCard" title="Permalink to this definition"></a></dt>
+<dd><p>When a wildcard word is passed, it rotates the word untill the * is the last character and finds 
+all words under the node reach on travelling the prefix of * in the rotated word</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>wildCard</strong> – the wildcard for which you want the words in the documents matching with it</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="IR_system.Trie.getWordsUnderNode">
+<span class="sig-name descname"><span class="pre">getWordsUnderNode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prefix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">finalWords</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#IR_system.Trie.getWordsUnderNode" title="Permalink to this definition"></a></dt>
+<dd><p>This returns all the words found by traversing the trie to the leaves from the given node</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>prefix</strong> – the prefix to travel to the node from which all the words under it are required</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="IR_system.Trie.getWordsWithPrefix">
+<span class="sig-name descname"><span class="pre">getWordsWithPrefix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prefixToSearch</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#IR_system.Trie.getWordsWithPrefix" title="Permalink to this definition"></a></dt>
+<dd><p>The function finds and returns words that match with the given prefix. It travels and returns all the words at the leaf level
+from the node that is reached on traversing trie as per the prefix</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>prefixToSearch</strong> – the prefix of the words you want to find</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="IR_system.Trie.insert">
+<span class="sig-name descname"><span class="pre">insert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wordToInsert</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#IR_system.Trie.insert" title="Permalink to this definition"></a></dt>
+<dd><p>This function finds all rotation of a word and inserts into the Trie</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>wordToInsert</strong> – THe word for which it and its rotations are to be inserted into the trie(permuterm index)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="IR_system.Trie.search">
+<span class="sig-name descname"><span class="pre">search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wordToSearch</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#IR_system.Trie.search" title="Permalink to this definition"></a></dt>
+<dd><p>Used to check whether a word is present in the Trie or not</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>wordToSearch</strong> – The word whose presence you want to check</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="IR_system.TrieNode">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">IR_system.</span></span><span class="sig-name descname"><span class="pre">TrieNode</span></span><a class="headerlink" href="#IR_system.TrieNode" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>this class creates a node object that is used by the Trie class to create a Trie</p>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-left" title="Fetch-Wont-Happen" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
-    
+  <hr/>
 
-    
-  </body>
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Pranay Adithya Rishi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
 </html>

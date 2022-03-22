@@ -13,4 +13,14 @@ To run the project:
 
 The output for the query will be calculated and printed out on the console.
 
+Test cases to try out:
+-> Normal search: ( valeria )
+-> Correct words with AND operator: ( dissolutely AND bardolph ) 
+-> Correct words with OR operator: ( scarf  OR merriness )
+-> Correct words with NOT operator: ( NOT william )
+-> WIldcard: ( val*a )
+-> AND and NOT: ( Ceasar AND ( NOT william ) )
+-> WIldcard and OR: ( val*a OR bar* )
+
+
 user can continuously query and then can pass "-1" when they dont wish to pass any more new queries.
