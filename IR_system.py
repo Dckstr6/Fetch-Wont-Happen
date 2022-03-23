@@ -375,5 +375,5 @@ if __name__ == "__main__":
             results = fetch.process_user_query(user_input)
             print()
             pprint(f"Results for {user_input} are: ")
-            pprint(results)
+            pprint(results[0])
             print()
