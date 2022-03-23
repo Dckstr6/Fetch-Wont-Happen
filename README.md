@@ -1,4 +1,4 @@
-# Fetch-Wont-Happen
+# Boolean Information Retrieval System
 Boolean Information Retrieval System with wildcard and spell check support
 
 To run the project:
@@ -21,6 +21,18 @@ Test cases to try out:
 > WIldcard: ( val*a ).  
 > AND and NOT: ( Ceasar AND ( NOT william ) ).  
 > WIldcard and OR: ( val*a OR bar* ).  
+> Wrong Spelling: ( valer ).  
+
 
 
 user can continuously query and then can pass "-1" when they dont wish to pass any more new queries.
+
+
+## Stopword Removal and Lemmatization
+![](/stop_and_lemmatize.png)
+
+## Inverted Index
+![](/inverted_index.png)
+
+## Execution of a query
+![](/querying.png)
