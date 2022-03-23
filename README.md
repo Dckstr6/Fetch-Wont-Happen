@@ -1,4 +1,4 @@
-# Fetch-Wont-Happen
+# Boolean Information Retrieval System
 Boolean Information Retrieval System with wildcard and spell check support
 
 To run the project:
@@ -24,3 +24,13 @@ Test cases to try out:
 
 
 user can continuously query and then can pass "-1" when they dont wish to pass any more new queries.
+
+
+## Stopword Removal and Lemmatization
+![](/stop_and_lemmatize.png)
+
+## Inverted Index
+![](/inverted_index.png)
+
+## Execution of a query
+![](/querying.png)
