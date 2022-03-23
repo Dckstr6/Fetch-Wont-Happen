@@ -21,6 +21,8 @@ Test cases to try out:
 > WIldcard: ( val*a ).  
 > AND and NOT: ( Ceasar AND ( NOT william ) ).  
 > WIldcard and OR: ( val*a OR bar* ).  
+> Wrong Spelling: ( valer ).  
+
 
 
 user can continuously query and then can pass "-1" when they dont wish to pass any more new queries.
