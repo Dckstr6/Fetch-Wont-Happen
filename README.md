@@ -28,7 +28,7 @@ Test cases to try out:
 user can continuously query and then can pass "-1" when they dont wish to pass any more new queries.
 
 
-## Stopword Removal and Lemmatization
+## Lemmatization and Stopword Removal
 ![](/stop_and_lemmatize.png)
 
 ## Inverted Index
