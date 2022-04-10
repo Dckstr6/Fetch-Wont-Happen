@@ -3,7 +3,7 @@ Boolean Information Retrieval System with wildcard and spell check support
 
 To run the project:
 1. Clone the project.
-2. Create a directory named "Data" and store all your documents and anopther directory "preprocessed_data" for the preprocessed files to be written into.
+2. Create a directory named "Data" and store all your documents and another directory "preprocessed_data" for the preprocessed files to be written into.
 3. Run the "IR_system" python program.
 4. After the program is done with preprocessing the documents, the user query is to be entered following the format as shown through an example below.
     
